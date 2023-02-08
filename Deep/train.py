@@ -10,8 +10,8 @@ def train(model, train_loader, cost, optimizer, epoch):
         running_loss=0
         correct=0
         for data, target in train_loader:
-            data = data.view(data.shape[0], -1)
-            optimizer.zero_grad()
+            data = data.view(data.shape[0], -1)         # Iterates through batches
+            optimizer.zero_grad()                       
             pred = model(data)
             loss = cost(pred, target)
             running_loss+=loss
